@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Analysis"
+  short_description: "Help with Architecture Analysis tasks"
+  default_prompt: "Use $architecture-analysis to collect hardware and model-run evidence, then produce architecture recommendations with explicit trade-offs."
