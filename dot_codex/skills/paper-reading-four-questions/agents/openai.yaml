@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper Reading Four Questions"
+  short_description: "Analyze papers with four fixed questions and readable notes."
+  default_prompt: "Use the four-question paper reading workflow to analyze this paper and produce a structured note."
