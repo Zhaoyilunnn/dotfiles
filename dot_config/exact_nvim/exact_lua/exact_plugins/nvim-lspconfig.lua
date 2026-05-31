@@ -9,6 +9,9 @@ return {
       texlab = {
         enabled = false, -- disable texlab by default, it sucks
       },
+      -- clangd = {
+      --   mason = false, -- uncomment for arm64 machine, see: https://github.com/mason-org/mason-registry/issues/5800
+      -- },
     },
   },
 }
