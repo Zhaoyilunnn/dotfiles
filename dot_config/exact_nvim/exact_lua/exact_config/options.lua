@@ -22,3 +22,18 @@ vim.g.copilot_filetypes = {
 -- vim.lsp.enable("ltex", true)
 -- vim.lsp.enable("texlab", false)
 -- vim.lsp.enable("ltex_plus")
+
+-- 全局设置剪贴板使用 OSC 52
+if vim.g.neovim_version == nil or vim.fn.has("nvim-0.10") == 1 then
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = {
+      ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+    },
+  }
+end
