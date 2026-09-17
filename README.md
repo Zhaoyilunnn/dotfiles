@@ -27,6 +27,8 @@ chezmoi init --apply git@github.com:Zhaoyilunnn/dotfiles.git
 - `~/.config/nvim` (exact)
 - `~/.codex/skills/inspect-pac-proxy`
 
+Personal third-party skills and their install commands are listed in [skills.md](skills.md). This source-only file is excluded from `chezmoi apply`.
+
 ## Useful commands
 
 ```bash
