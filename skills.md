@@ -16,3 +16,16 @@ This is the source list for third-party skills I use globally. The skill files a
 - Update CLI-managed skills: `npx skills update --global`
 
 After installing, use `npx skills ls -g` to confirm that Archify is tracked by the CLI.
+
+## Greptile skills
+
+- Source: https://github.com/greptileai/skills
+- Skills: `check-pr`, `cli-review`, `greploop`
+- Purpose: Check PR review comments and status, run local Greptile reviews, and repeat review and fixes.
+- Install for Codex:
+
+  ```bash
+  npx skills add greptileai/skills --skill check-pr --agent codex --global --yes
+  npx skills add greptileai/skills --skill cli-review --agent codex --global --yes
+  npx skills add greptileai/skills --skill greploop --agent codex --global --yes
+  ```
