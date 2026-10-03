@@ -31,9 +31,10 @@ if vim.g.neovim_version == nil or vim.fn.has("nvim-0.10") == 1 then
       ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
       ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
     },
-    paste = {
-      ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-      ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
-    },
+    -- Do not set paste to avoid issues when using wezterm in WSL.
+    -- paste = {
+    --   ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+    --   ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+    -- },
   }
 end
