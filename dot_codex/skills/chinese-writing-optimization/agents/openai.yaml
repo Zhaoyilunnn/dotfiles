@@ -1,0 +1,4 @@
+interface:
+  display_name: "中文学术表达优化"
+  short_description: "优化中文学术文本的句式与用词，减少欧化表达，保持术语、逻辑与证据准确"
+  default_prompt: "使用 $chinese-writing-optimization 优化以下中文学术文本，保留技术含义、论证关系和引用，直接给出修改后的正文。"
