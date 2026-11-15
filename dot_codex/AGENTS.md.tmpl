@@ -1,0 +1,21 @@
+{{- $historyDir := "" -}}
+{{- if hasKey . "sessionHistoryDir" -}}
+{{- $historyDir = .sessionHistoryDir -}}
+{{- else if eq .chezmoi.os "linux" -}}
+{{- if contains "microsoft" (lower .chezmoi.kernel.osrelease) -}}
+{{- $historyDir = "/mnt/d/Personal/buddy-history" -}}
+{{- end -}}
+{{- end -}}
+# Global Codex Instructions
+
+## Reviewing conversation history
+
+- Whenever the user asks to recall, find, review, or summarize past conversations, search the session history archive before answering.
+{{ if $historyDir -}}
+- The session history archive root on this device is `{{ $historyDir }}`.
+{{ else -}}
+- The session history archive root is not configured on this device. Ask the user for its location before searching; do not guess a path. Set `sessionHistoryDir` in chezmoi's local `[data]` configuration and reapply this file to persist it.
+{{ end -}}
+- Search recursively across the entire archive, including every device, application, and session history, and all hidden files and directories whose names start with `.`. Do not limit the search to the current project's or current device's sessions.
+- Use `rg --hidden --no-ignore` for content searches and `rg --files --hidden --no-ignore` to discover files, or equivalent commands that include hidden and ignored entries. Narrow results by the user's topic or time range, then read the relevant records for context.
+- Support the answer with the source file paths and session identifiers or timestamps when available. If the archive is unavailable or no matching records are found, say so explicitly; do not invent recollections.
